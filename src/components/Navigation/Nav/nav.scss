@@ -1,0 +1,31 @@
+.menu {
+  position: fixed;
+  background-color: #333;
+  width: 100%;
+  padding: 15px;
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .button-nav {
+    border-radius: 10px;
+    background-color: orangered;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+    cursor: pointer;
+    padding: 15px;
+    margin-right: 20px;
+    
+  }
+  .button-nav span {
+    padding-left: 10px;
+  }
+}
+.containet-btn {
+  display: flex;
+  padding-right: 20px;
+}
