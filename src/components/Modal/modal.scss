@@ -1,11 +1,27 @@
-.modalWrapper{
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-   
+.modalWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
-.modal-footer-btn{
-    background-color: greenyellow;
+
+.btn-cancel{
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+}
+
+.btn-add{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  color: white;
+  background: green;
+  border-radius: 10px;
 }

@@ -1,23 +1,18 @@
-.card{
-    max-width: 100%;
-    margin: 25px auto;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 25px;
-    
+.card {
+  max-width: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 25px;
 }
 
-.btn_container{
-    display: flex;
-    justify-content: space-between;
+.btn_container {
+  display: flex;
+  justify-content: space-between;
 }
-.btn-add{
-    background-color:green
+.btn-add {
+  background-color: green;
 }
-.btn-star{
-    background-color: white;
-    border: none;
-    outline: none;
-    border-color: white;
+.btn-star {
+  background-color: white;
+  border: none;
 }
-

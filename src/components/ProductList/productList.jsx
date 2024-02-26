@@ -1,67 +1,34 @@
-import "./productList.scss";
-import Product from "../Product/product";
-import { useEffect, useState } from "react";
+import './productList.scss'
+import Product from '../Product/product'
+import Loading from '../../ui/Loading/Loading'
+import {useState} from "react";
 
+const ProductList = ({ products, changeFavorite, favorite, addToBasket, addToBasketProducts }) => {
+  const [toggleModal, setToggleModal] = useState(false)
+  const addToCart = () => setToggleModal(true)
 
-const ProductList = (props) => {
-  const { products, addToCart, setFavoriteNav } = props;
-  const [favorite, setFavorite] = useState([]);
-
-
-  const changeFavorite = (id) => {
-    setFavorite((prev) => {
-      
-      if(prev.includes(id)){
-        const pos = prev.findIndex((idex) => {
-          return idex === id
-        })
-        
-        prev.splice(pos, 1)
-        
-        return [...prev]
-      }else{return [...prev, id]}
-    });
-    
-  };
-
-  useEffect(() => {
-    const favoriteStr = localStorage.getItem("favorite");
-    let favoriteArr = [];
-    if (favoriteStr) {
-      favoriteArr = JSON.parse(favoriteStr);
-    }
-    setFavorite(() => {
-      return [...favoriteArr];
-    });
-  },[]);
-
-  useEffect(() => {
-    if(favorite.length !== 0){
-        let favoriteArr = [...new Set(favorite)];
-        localStorage.setItem("favorite", JSON.stringify(favoriteArr));
-        setFavoriteNav(favoriteArr.length)
-    }
-  }, [favorite]);
-
-  const isFavorite = (id) => {
-  return favorite.includes(id)
-  };
-
+  const isFavorite = (id) => favorite.includes(id)
+  console.log()
   return (
-    <div className="grid">
-      {products.map((product) => {
+    <>
+      {products?.map((product) => {
         return (
           <Product
+              setToggleModal={setToggleModal}
+              toggleModal={toggleModal}
+              addToBasketProducts={addToBasketProducts}
+              addToBasket={addToBasket}
             key={product.id}
             addToCart={addToCart}
             changeFavorite={changeFavorite}
             isFavorite={isFavorite(product.id)}
             {...product}
           />
-        );
+        )
       })}
-    </div>
-  );
-};
+      {!products && <Loading />}
+    </>
+  )
+}
 
-export default ProductList;
+export default ProductList

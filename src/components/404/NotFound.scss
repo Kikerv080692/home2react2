@@ -1,0 +1,12 @@
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .not-found-wrapper {
+    padding: 40px;
+    border: 2px solid green;
+    border-radius: 10px;
+  }
+}

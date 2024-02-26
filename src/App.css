@@ -1,31 +1,27 @@
 #root {
- 
 }
 
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-.cards{
-  max-width: 100%;
-  height: 100%;
+.cards {
   padding-top: 100px;
-  margin-left: 20px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-
-.container__btn-footer{
+.container__btn-footer {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
-    .btn-footer{
-      background-color: grey;
-    }
+  .btn-footer {
+    background-color: grey;
+  }
 }
-
-
-
